@@ -24,7 +24,6 @@
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     
-    /* Background Luar dengan Nuansa Batik Ornamen Tradisional */
     body{
       margin:0;
       background-color: #2D231E;
@@ -39,7 +38,6 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* Pembungkus Utama di Tengah (Background Kertas Portofolio) */
     .page-container {
       max-width: 980px;
       margin: 0 auto;
@@ -65,14 +63,40 @@
       padding:0 32px;
     }
 
-    /* Header */
+    /* Header Masthead dengan Ornamen Batik */
     header.masthead{
       border-bottom:2px solid var(--ink);
-      padding:20px 0;
+      padding:22px 0;
       position:sticky;
       top:0;
       background:var(--paper);
       z-index:50;
+      overflow: hidden;
+    }
+
+    header.masthead::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 10px;
+      width: 110px;
+      height: 100%;
+      background: url('batik-megamendung.png') no-repeat center left / contain;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    header.masthead::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: 10px;
+      width: 110px;
+      height: 100%;
+      background: url('batik-megamendung.png') no-repeat center right / contain;
+      transform: scaleX(-1);
+      pointer-events: none;
+      opacity: 0.85;
     }
 
     .masthead-inner{
@@ -81,6 +105,8 @@
       align-items:baseline;
       flex-wrap:wrap;
       gap:12px;
+      position: relative;
+      z-index: 2;
     }
 
     .masthead-name{
@@ -461,6 +487,7 @@
       .timeline-item{ grid-template-columns:1fr; gap:6px; }
       .edu-item { flex-direction: column; gap: 8px; }
       .page-container { border-left: none; border-right: none; }
+      header.masthead::before, header.masthead::after { width: 60px; opacity: 0.5; }
     }
   </style>
 </head>
