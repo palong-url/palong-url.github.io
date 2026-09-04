@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Naufal Rahim, CPLD — Legal Drafter & AI Enthusiast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Memanggil file CSS eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-name">Muhammad Naufal Rahim, CPLD</div>
+    <nav class="masthead-nav">
+      <a href="#about">Profil</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#projects">Publikasi & Project</a>
+      <a href="#education">Pendidikan & Sertifikasi</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="docket">BERKAS PROFIL — DIPERBARUI SEPTEMBER 2026</div>
+    <h1>Menghubungkan Ketelitian Hukum Korporat dengan Efisiensi Teknologi AI.</h1>
+    <p class="role">Mahasiswa Hukum UIN Jakarta (IPK 3.92) & <strong>Certified Professional Legal Drafter (CPLD)</strong>[cite: 2] dengan pengalaman praktis dalam <em>due diligence</em>, peninjauan kontrak, riset regulasi, serta pengembangan agen AI untuk sektor hukum[cite: 2].</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#contact">Hubungi Saya</a>
+      <a class="btn btn-outline" href="#projects">Lihat Publikasi & Project</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-body">
+      <div class="section-head" style="margin-bottom:20px;">
+        <h2>Profil Ringkas</h2>
+      </div>
+      <p>Saya adalah mahasiswa ilmu hukum aktif di UIN Jakarta sekaligus Perancang Kontrak Hukum Profesional Terpublikasi (CPLD)[cite: 2]. Saya menggabungkan pemahaman analisis hukum dasar seperti penanganan dokumen legalitas pertanahan, perjanjian vendor, dan kepatuhan korporasi dengan literasi digital modern[cite: 2].</p>
+      <p>Selain berpengalaman mengelola tim skala besar hingga 100+ anggota dalam organisasi[cite: 2], saya memiliki komitmen untuk mempopulerkan literasi hukum lewat tulisan-tulisan opini publik[cite: 2] serta mendalami penerapan Kecerdasan Buatan (AI) guna mempercepat analisis dan riset hukum[cite: 2].</p>
+    </div>
+    <dl class="fact-list">
+      <dt>Berbasis di</dt>
+      <dd>Jakarta, Indonesia[cite: 2]</dd>
+      <dt>IPK / Prestasi</dt>
+      <dd>3.92 / Valedictorian[cite: 2]</dd>
+      <dt>Kredensial Utama</dt>
+      <dd>Certified Professional Legal Drafter (CPLD)[cite: 2]</dd>
+      <dt>Bahasa / Kemampuan</dt>
+      <dd>Indonesia (UKBI Sangat Unggul - 644)[cite: 2]</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pengalaman Kerja & Organisasi</h2>
+      <span class="section-tag">2024 — SEKARANG</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Jul 2026 — Sekarang</div>
+      <div>
+        <div class="timeline-role">Staff, Divisi Pengembangan Umum</div>
+        <div class="timeline-org">Angkatan Muda Peduli Hukum (AMPUH), Jakarta[cite: 2]</div>
+        <p class="timeline-desc">Mengonsepkan dan menyelenggarakan forum akademik, seminar, serta diskusi panel bertema hukum untuk menumbuhkan pemikiran kritis mahasiswa[cite: 2].</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Des 2025 — Mar 2026</div>
+      <div>
+        <div class="timeline-role">Legal Intern</div>
+        <div class="timeline-org">PT KSU Nusantara, Kendari[cite: 2]</div>
+        <div class="timeline-desc">
+          <ul>
+            <li>Membantu proses <em>Legal Due Diligence</em>, verifikasi sertifikat tanah, serta penilaian risiko hukum akuisisi lahan[cite: 2].</li>
+            <li>Menyusun dan meninjau kontrak properti (PPJB/AJB), perjanjian vendor, dan sewa-menyewa[cite: 2].</li>
+            <li>Melakukan riset regulasi perumahan, zonasi, kepatuhan korporasi, serta perizinan lingkungan[cite: 2].</li>
+            <li>Mengelola dan memperbarui basis data hukum, arsip, dan repositori kontrak perusahaan[cite: 2].</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Nov 2025 — Mei 2026</div>
+      <div>
+        <div class="timeline-role">Panitia Event — AMPUH Career Day Vol. 3</div>
+        <div class="timeline-org">Angkatan Muda Peduli Hukum (AMPUH)[cite: 2]</div>
+        <p class="timeline-desc">Mengonsepkan dan mengoperasikan rangkaian acara seminar pengembangan karier hukum secara terstruktur dan profesional[cite: 2].</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Sep 2024 — Jun 2025</div>
+      <div>
+        <div class="timeline-role">Ketua Panitia & Head of HR</div>
+        <div class="timeline-org">Ummushabri Kendari[cite: 2]</div>
+        <p class="timeline-desc">Memimpin dan mengelola panitia sebanyak 100 anggota untuk kesuksesan operasional acara skala internasional (Ummushabri International Expo & International Youth Congress)[cite: 2].</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Keahlian Utama</h2>
+      <span class="section-tag">HUKUM × TEKNOLOGI × LEADERSHIP</span>
+    </div>
+    <div class="skills-columns">
+      <div class="skill-block legal">
+        <h3>Legal & Legal Drafting</h3>
+        <div class="skill-tags">
+          <span>Perancangan Kontrak (SPJB/AJB)[cite: 2]</span>
+          <span>Legal Due Diligence[cite: 2]</span>
+          <span>Review Perjanjian Vendor & Lease[cite: 2]</span>
+          <span>Corporate Compliance[cite: 2]</span>
+          <span>Riset Hukum & Regulasi[cite: 2]</span>
+          <span>Legal Administration[cite: 2]</span>
+        </div>
+      </div>
+      <div class="skill-block ai">
+        <h3>AI, Digital & Management</h3>
+        <div class="skill-tags">
+          <span>AI Agent Development for Legal[cite: 2]</span>
+          <span>AI Literacy & Machine Learning Fairness[cite: 2]</span>
+          <span>Project Management (100+ Members)[cite: 2]</span>
+          <span>Legal Public Relations & Writing[cite: 2]</span>
+          <span>Microsoft Office Certified[cite: 2]</span>
+          <span>Public Speaking[cite: 2]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publikasi & Proyek</h2>
+      <span class="section-tag">LITERASI & INOVASI</span>
+    </div>
+
+    <div class="project">
+      <div>
+        <span class="project-meta">PUBLIKASI OPINI HUKUM — RETIZEN REPUBLIKA</span>
+        <h3>"Masih Anggap Hukum Cuma Urusan Pengacara? Ternyata Sedekat Klik di Medsosmu!"</h3>
+      </div>
+      <p>Artikel literasi hukum populer yang mengulas bagaimana aktivitas digital harian seperti transaksi e-commerce dan penggunaan media sosial saling bersinggungan dengan instrumen hukum[cite: 2].</p>
+    </div>
+
+    <div class="project">
+      <div>
+        <span class="project-meta">FINAL PROJECT — HACKTIV8 X IBM SKILLSBUILD (SCORE: 87.70)</span>
+        <h3>AI Agent for Legal Implementation</h3>
+      </div>
+      <p>Proyek pengembangan dan penerapan agen kecerdasan buatan (*AI Agent*) yang dirancang khusus untuk mempermudah analisis dan pemrosesan riset dokumen hukum[cite: 2].</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pendidikan & Sertifikasi</h2>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">S1 Ilmu Hukum (S.H.)</div>
+      <div class="edu-school">Universitas Islam Negeri (UIN) Syarif Hidayatullah Jakarta — IPK 3.92</div>
+      <span class="edu-year">2025 — 2028 (Ekspektasi)[cite: 2]</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Certified Professional Legal Drafter (CPLD)</div>
+      <div class="edu-school">PT Bostan Royal Nusantara (Credential ID: 166/CERT.COMP/BSTN/CPLD/VII/2026)</div>
+      <span class="edu-year">Juli 2026[cite: 2]</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Legal - AI Agent for Legal & AI Literacy</div>
+      <div class="edu-school">Hacktiv8 Indonesia x IBM SkillsBuild</div>
+      <span class="edu-year">Juli 2026[cite: 2]</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Machine Learning Crash Course: Fairness</div>
+      <div class="edu-school">Google for Developers</div>
+      <span class="edu-year">Sertifikasi Teknis[cite: 2]</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Mari Berdiskusi</h2>
+    <p>Terbuka untuk peluang internship/peran dalam bidang Legal Corporate, Legal Drafting, Compliance, maupun posisi berbasis Legal Tech. Silakan hubungi saya melalui kontak di bawah ini.</p>
+    <div class="contact-links">
+      <a href="mailto:naufalrahim007@gmail.com">naufalrahim007@gmail.com[cite: 2]</a>
+      <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener">LinkedIn Profil[cite: 2]</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Muhammad Naufal Rahim, CPLD — Jakarta, Indonesia[cite: 2]</div>
+</footer>
+
+<!-- Memanggil file JavaScript eksternal -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Navigasi smooth scroll tambahan untuk browser lama
+  const links = document.querySelectorAll('nav a, .hero-actions a');
+
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+});
