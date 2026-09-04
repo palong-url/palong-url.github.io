@@ -1,396 +1,222 @@
-:root{
-  --paper:#FAF6EE;
-  --paper-deep:#F1EADA;
-  --ink:#211D1A;
-  --ink-soft:#4A433C;
-  --oxblood:#6B2331;
-  --oxblood-deep:#4F1A24;
-  --brass:#9A7B34;
-  --line:#D8CCB4;
-  --slate:#3E4A52;
-}
-
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'IBM Plex Sans', sans-serif;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto;}
-  *{animation:none !important; transition:none !important;}
-}
-
-h1,h2,h3{
-  font-family:'Fraunces', serif;
-  font-weight:500;
-  color:var(--ink);
-  margin:0;
-}
-
-a{color:inherit;}
-
-.wrap{
-  max-width:920px;
-  margin:0 auto;
-  padding:0 32px;
-}
-
-/* ---------- Header ---------- */
-header.masthead{
-  border-bottom:2px solid var(--ink);
-  padding:20px 0;
-  position:sticky;
-  top:0;
-  background:var(--paper);
-  z-index:50;
-}
-
-.masthead-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.masthead-name{
-  font-family:'Fraunces', serif;
-  font-size:1.15rem;
-  letter-spacing:0.01em;
-}
-
-nav.masthead-nav{
-  display:flex;
-  gap:28px;
-  font-size:0.92rem;
-}
-
-nav.masthead-nav a{
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  padding-bottom:2px;
-  transition:border-color 0.2s ease;
-}
-
-nav.masthead-nav a:hover{ border-color:var(--oxblood); }
-
-/* ---------- Hero ---------- */
-.hero{
-  padding:88px 0 72px;
-  border-bottom:1px solid var(--line);
-}
-
-.hero .docket{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.78rem;
-  color:var(--oxblood);
-  margin-bottom:20px;
-  letter-spacing:0.02em;
-}
-
-.hero h1{
-  font-size:clamp(2.2rem, 4.8vw, 3.4rem);
-  line-height:1.12;
-  max-width:18ch;
-}
-
-.hero .role{
-  margin-top:18px;
-  font-size:1.15rem;
-  color:var(--ink-soft);
-  max-width:52ch;
-}
-
-.hero .role strong{
-  color:var(--oxblood-deep);
-  font-weight:600;
-}
-
-.hero-actions{
-  margin-top:34px;
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 24px;
-  font-size:0.92rem;
-  text-decoration:none;
-  border:1.5px solid var(--ink);
-  transition:background 0.2s ease, color 0.2s ease;
-}
-
-.btn-solid{
-  background:var(--oxblood);
-  border-color:var(--oxblood);
-  color:var(--paper);
-}
-
-.btn-solid:hover{ background:var(--oxblood-deep); border-color:var(--oxblood-deep); }
-.btn-outline:hover{ background:var(--ink); color:var(--paper); }
-
-/* ---------- Section shell ---------- */
-section{
-  padding:64px 0;
-  border-bottom:1px solid var(--line);
-}
-
-section:last-of-type{ border-bottom:none; }
-
-.section-head{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  margin-bottom:36px;
-  gap:16px;
-}
-
-.section-head h2{
-  font-size:1.7rem;
-}
-
-.section-tag{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.78rem;
-  color:var(--ink-soft);
-}
-
-/* ---------- About ---------- */
-.about-grid{
-  display:grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap:48px;
-}
-
-.about-body p{
-  max-width:62ch;
-  color:var(--ink-soft);
-  font-size:1.02rem;
-}
-
-.about-body p + p{ margin-top:16px; }
-
-.fact-list{
-  border-left:2px solid var(--brass);
-  padding-left:20px;
-  margin:0;
-}
-
-.fact-list dt{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.72rem;
-  color:var(--ink-soft);
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-}
-
-.fact-list dd{
-  margin:2px 0 16px;
-  font-size:0.98rem;
-}
-
-/* ---------- Experience ---------- */
-.timeline-item{
-  display:grid;
-  grid-template-columns:140px 1fr;
-  gap:24px;
-  padding:22px 0;
-  border-top:1px solid var(--line);
-}
-
-.timeline-item:first-child{ border-top:none; }
-
-.timeline-date{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.82rem;
-  color:var(--oxblood);
-  padding-top:3px;
-}
-
-.timeline-role{
-  font-family:'Fraunces', serif;
-  font-size:1.15rem;
-  margin-bottom:4px;
-}
-
-.timeline-org{
-  color:var(--ink-soft);
-  font-size:0.94rem;
-  margin-bottom:10px;
-  font-weight:500;
-}
-
-.timeline-desc{
-  color:var(--ink-soft);
-  font-size:0.96rem;
-  max-width:58ch;
-}
-
-.timeline-desc ul{
-  margin:6px 0 0;
-  padding-left:18px;
-}
-
-.timeline-desc li{
-  margin-bottom:4px;
-}
-
-/* ---------- Skills ---------- */
-.skills-columns{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
-
-.skill-block h3{
-  font-size:1.05rem;
-  margin-bottom:16px;
-  padding-bottom:10px;
-  border-bottom:2px solid var(--ink);
-}
-
-.skill-block.legal h3{ border-color:var(--oxblood); }
-.skill-block.ai h3{ border-color:var(--slate); }
-
-.skill-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.skill-tags span{
-  font-size:0.86rem;
-  padding:6px 12px;
-  border:1px solid var(--line);
-  color:var(--ink-soft);
-}
-
-.skill-block.legal .skill-tags span{ border-color:rgba(107,35,49,0.35); }
-.skill-block.ai .skill-tags span{ border-color:rgba(62,74,82,0.35); }
-
-/* ---------- Projects ---------- */
-.project{
-  padding:26px 0;
-  border-top:1px solid var(--line);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  align-items:start;
-}
-
-.project:first-child{ border-top:none; }
-
-.project h3{
-  font-size:1.2rem;
-  margin-bottom:8px;
-}
-
-.project .project-meta{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.74rem;
-  color:var(--oxblood);
-  margin-bottom:10px;
-  display:block;
-}
-
-.project p{
-  color:var(--ink-soft);
-  font-size:0.95rem;
-  margin:0;
-}
-
-/* ---------- Education ---------- */
-.edu-item{
-  padding:18px 0;
-  border-top:1px solid var(--line);
-}
-
-.edu-item:first-child{ border-top:none; }
-
-.edu-item .edu-degree{
-  font-family:'Fraunces', serif;
-  font-size:1.08rem;
-}
-
-.edu-item .edu-school{
-  color:var(--ink-soft);
-  font-size:0.92rem;
-  margin-top:2px;
-}
-
-.edu-item .edu-year{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.78rem;
-  color:var(--oxblood);
-  margin-top:4px;
-  display:inline-block;
-}
-
-/* ---------- Contact ---------- */
-.contact{
-  background:var(--ink);
-  color:var(--paper-deep);
-  border-bottom:none;
-}
-
-.contact h2{ color:var(--paper); }
-
-.contact p{
-  color:#C9C2B4;
-  max-width:52ch;
-  font-size:1.02rem;
-}
-
-.contact-links{
-  margin-top:28px;
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-.contact-links a{
-  text-decoration:none;
-  border:1.5px solid #C9C2B4;
-  padding:11px 22px;
-  font-size:0.92rem;
-  transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.contact-links a:hover{
-  background:var(--paper);
-  color:var(--ink);
-  border-color:var(--paper);
-}
-
-footer{
-  padding:24px 0 40px;
-  font-family:'IBM Plex Mono', monospace;
-  font-size:0.74rem;
-  color:#8A8272;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 720px){
-  .about-grid, .skills-columns, .project{
-    grid-template-columns:1fr;
-  }
-  .timeline-item{
-    grid-template-columns:1fr;
-    gap:6px;
-  }
-  nav.masthead-nav{ gap:16px; font-size:0.85rem; }
-  .hero{ padding:56px 0 48px; }
-}
-
-a:focus-visible, button:focus-visible{
-  outline:2px solid var(--oxblood);
-  outline-offset:2px;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Naufal Rahim, CPLD — Legal Drafter & AI Enthusiast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-name">Muhammad Naufal Rahim, CPLD</div>
+    <nav class="masthead-nav">
+      <a href="#about">Profil</a>
+      <a href="#experience">Pengalaman</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#projects">Publikasi & Project</a>
+      <a href="#education">Pendidikan & Sertifikasi</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="docket">BERKAS PROFIL — DIPERBARUI SEPTEMBER 2026</div>
+    <h1>Menghubungkan Ketelitian Hukum Korporat dengan Efisiensi Teknologi AI.</h1>
+    <p class="role">Mahasiswa Hukum UIN Jakarta (IPK 3.92) & <strong>Certified Professional Legal Drafter (CPLD)</strong>[cite: 2] dengan pengalaman praktis dalam <em>due diligence</em>, peninjauan kontrak, riset regulasi, serta pengembangan agen AI untuk sektor hukum[cite: 2].</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#contact">Hubungi Saya</a>
+      <a class="btn btn-outline" href="#projects">Lihat Publikasi & Project</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-body">
+      <div class="section-head" style="margin-bottom:20px;">
+        <h2>Profil Ringkas</h2>
+      </div>
+      <p>Saya adalah mahasiswa ilmu hukum aktif di UIN Jakarta sekaligus Perancang Kontrak Hukum Profesional Terpublikasi (CPLD)[cite: 2]. Saya menggabungkan pemahaman analisis hukum dasar seperti penanganan dokumen legalitas pertanahan, perjanjian vendor, dan kepatuhan korporasi dengan literasi digital modern[cite: 2].</p>
+      <p>Selain berpengalaman mengelola tim skala besar hingga 100+ anggota dalam organisasi[cite: 2], saya memiliki komitmen untuk mempopulerkan literasi hukum lewat tulisan-tulisan opini publik[cite: 2] serta mendalami penerapan Kecerdasan Buatan (AI) guna mempercepat analisis dan riset hukum[cite: 2].</p>
+    </div>
+    <dl class="fact-list">
+      <dt>Berbasis di</dt>
+      <dd>Jakarta, Indonesia[cite: 2]</dd>
+      <dt>IPK / Prestasi</dt>
+      <dd>3.92 / Valedictorian[cite: 2]</dd>
+      <dt>Kredensial Utama</dt>
+      <dd>Certified Professional Legal Drafter (CPLD)[cite: 2]</dd>
+      <dt>Bahasa / Kemampuan</dt>
+      <dd>Indonesia (UKBI Sangat Unggul - 644)[cite: 2]</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pengalaman Kerja & Organisasi</h2>
+      <span class="section-tag">2024 — SEKARANG</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Jul 2026 — Sekarang</div>
+      <div>
+        <div class="timeline-role">Staff, Divisi Pengembangan Umum</div>
+        <div class="timeline-org">Angkatan Muda Peduli Hukum (AMPUH), Jakarta[cite: 2]</div>
+        <p class="timeline-desc">Mengonsepkan dan menyelenggarakan forum akademik, seminar, serta diskusi panel bertema hukum untuk menumbuhkan pemikiran kritis mahasiswa[cite: 2].</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Des 2025 — Mar 2026</div>
+      <div>
+        <div class="timeline-role">Legal Intern</div>
+        <div class="timeline-org">PT KSU Nusantara, Kendari[cite: 2]</div>
+        <div class="timeline-desc">
+          <ul>
+            <li>Membantu proses <em>Legal Due Diligence</em>, verifikasi sertifikat tanah, serta penilaian risiko hukum akuisisi lahan[cite: 2].</li>
+            <li>Menyusun dan meninjau kontrak properti (PPJB/AJB), perjanjian vendor, dan sewa-menyewa[cite: 2].</li>
+            <li>Melakukan riset regulasi perumahan, zonasi, kepatuhan korporasi, serta perizinan lingkungan[cite: 2].</li>
+            <li>Mengelola dan memperbarui basis data hukum, arsip, dan repositori kontrak perusahaan[cite: 2].</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Nov 2025 — Mei 2026</div>
+      <div>
+        <div class="timeline-role">Panitia Event — AMPUH Career Day Vol. 3</div>
+        <div class="timeline-org">Angkatan Muda Peduli Hukum (AMPUH)[cite: 2]</div>
+        <p class="timeline-desc">Mengonsepkan dan mengoperasikan rangkaian acara seminar pengembangan karier hukum secara terstruktur dan profesional[cite: 2].</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">Sep 2024 — Jun 2025</div>
+      <div>
+        <div class="timeline-role">Ketua Panitia & Head of HR</div>
+        <div class="timeline-org">Ummushabri Kendari[cite: 2]</div>
+        <p class="timeline-desc">Memimpin dan mengelola panitia sebanyak 100 anggota untuk kesuksesan operasional acara skala internasional (Ummushabri International Expo & International Youth Congress)[cite: 2].</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Keahlian Utama</h2>
+      <span class="section-tag">HUKUM × TEKNOLOGI × LEADERSHIP</span>
+    </div>
+    <div class="skills-columns">
+      <div class="skill-block legal">
+        <h3>Legal & Legal Drafting</h3>
+        <div class="skill-tags">
+          <span>Perancangan Kontrak (SPJB/AJB)[cite: 2]</span>
+          <span>Legal Due Diligence[cite: 2]</span>
+          <span>Review Perjanjian Vendor & Lease[cite: 2]</span>
+          <span>Corporate Compliance[cite: 2]</span>
+          <span>Riset Hukum & Regulasi[cite: 2]</span>
+          <span>Legal Administration[cite: 2]</span>
+        </div>
+      </div>
+      <div class="skill-block ai">
+        <h3>AI, Digital & Management</h3>
+        <div class="skill-tags">
+          <span>AI Agent Development for Legal[cite: 2]</span>
+          <span>AI Literacy & Machine Learning Fairness[cite: 2]</span>
+          <span>Project Management (100+ Members)[cite: 2]</span>
+          <span>Legal Public Relations & Writing[cite: 2]</span>
+          <span>Microsoft Office Certified[cite: 2]</span>
+          <span>Public Speaking[cite: 2]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publikasi & Proyek</h2>
+      <span class="section-tag">LITERASI & INOVASI</span>
+    </div>
+
+    <div class="project">
+      <div>
+        <span class="project-meta">PUBLIKASI OPINI HUKUM — RETIZEN REPUBLIKA</span>
+        <h3>"Masih Anggap Hukum Cuma Urusan Pengacara? Ternyata Sedekat Klik di Medsosmu!"</h3>
+      </div>
+      <p>Artikel literasi hukum populer yang mengulas bagaimana aktivitas digital harian seperti transaksi e-commerce dan penggunaan media sosial saling bersinggungan dengan instrumen hukum[cite: 2].</p>
+    </div>
+
+    <div class="project">
+      <div>
+        <span class="project-meta">FINAL PROJECT — HACKTIV8 X IBM SKILLSBUILD (SCORE: 87.70)</span>
+        <h3>AI Agent for Legal Implementation</h3>
+      </div>
+      <p>Proyek pengembangan dan penerapan agen kecerdasan buatan (*AI Agent*) yang dirancang khusus untuk mempermudah analisis dan pemrosesan riset dokumen hukum[cite: 2].</p>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Pendidikan & Sertifikasi</h2>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">S1 Ilmu Hukum (S.H.)</div>
+      <div class="edu-school">Universitas Islam Negeri (UIN) Syarif Hidayatullah Jakarta — IPK 3.92</div>
+      <span class="edu-year">2025 — 2028 (Ekspektasi)[cite: 2]</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Certified Professional Legal Drafter (CPLD)</div>
+      <div class="edu-school">PT Bostan Royal Nusantara (Credential ID: 166/CERT.COMP/BSTN/CPLD/VII/2026)</div>
+      <span class="edu-year">Juli 2026[cite: 2]</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Legal - AI Agent for Legal & AI Literacy</div>
+      <div class="edu-school">Hacktiv8 Indonesia x IBM SkillsBuild</div>
+      <span class="edu-year">Juli 2026[cite: 2]</span>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Machine Learning Crash Course: Fairness</div>
+      <div class="edu-school">Google for Developers</div>
+      <span class="edu-year">Sertifikasi Teknis[cite: 2]</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Mari Berdiskusi</h2>
+    <p>Terbuka untuk peluang internship/peran dalam bidang Legal Corporate, Legal Drafting, Compliance, maupun posisi berbasis Legal Tech. Silakan hubungi saya melalui kontak di bawah ini.</p>
+    <div class="contact-links">
+      <a href="mailto:naufalrahim007@gmail.com">naufalrahim007@gmail.com[cite: 2]</a>
+      <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener">LinkedIn Profil[cite: 2]</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Muhammad Naufal Rahim, CPLD — Jakarta, Indonesia[cite: 2]</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
