@@ -212,6 +212,7 @@
       font-weight:500;
       transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
       cursor:pointer;
+      background: transparent;
     }
 
     .btn-solid{
@@ -397,14 +398,6 @@
       margin:0 0 12px;
     }
 
-    .project-img-preview {
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid var(--line);
-      margin-top: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
     /* Education */
     .edu-item{
       padding:20px 0;
@@ -438,6 +431,60 @@
       color:var(--oxblood);
       margin-top:4px;
       display:inline-block;
+    }
+
+    /* CSS POPUP MODAL SERTIFIKAT */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      background: var(--paper);
+      padding: 16px;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 2px solid var(--brass);
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: var(--oxblood);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
 
     /* Contact */
@@ -640,7 +687,6 @@
       <span class="section-tag">LITERASI & INOVASI</span>
     </div>
 
-    <!-- Project Item 1: Artikel Retizen Republika -->
     <div class="project">
       <div>
         <span class="project-meta">PUBLIKASI OPINI HUKUM — RETIZEN REPUBLIKA</span>
@@ -654,7 +700,6 @@
       </div>
     </div>
 
-    <!-- Project Item 2: AI Agent Legal Risk Assessment -->
     <div class="project">
       <div>
         <span class="project-meta">FINAL PROJECT — HACKTIV8 X IBM SKILLSBUILD (SCORE: 87.70)</span>
@@ -689,13 +734,12 @@
         <div class="edu-degree">Certified Professional Legal Drafter (CPLD)</div>
         <div class="edu-school">Bostan Royal Institute / PT Bostan Royal Nusantara (No: 166/CERT.COMP/BSTN/CPLD/VII/2026)</div>
         <span class="edu-year">17 – 18 Juli 2026</span>
-        <!-- Pratinjau Sertifikat CPLD Baru -->
-        <img src="sertifikat-cpld.jpg" alt="Sertifikat CPLD Muhammad Naufal Rahim" class="project-img-preview">
       </div>
       <div class="edu-action">
-        <a href="sertifikat-cpld.jpg" target="_blank" rel="noopener" class="btn btn-outline btn-small">
-          <span>📄 Buka Sertifikat Full</span>
-        </a>
+        <!-- Tombol Pemicu Pop-up Sertifikat -->
+        <button class="btn btn-outline btn-small" onclick="openModal()">
+          📄 Buka Sertifikat Full
+        </button>
       </div>
     </div>
 
@@ -744,6 +788,25 @@
 </footer>
 
 </div>
+
+<!-- STRUCT POPUP MODAL -->
+<div id="certModal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(event)">✕</button>
+    <img src="CPLD SERTIF.jpg" alt="Sertifikat CPLD Muhammad Naufal Rahim">
+  </div>
+</div>
+
+<!-- JAVASCRIPT LOGIC POPUP -->
+<script>
+  function openModal() {
+    document.getElementById('certModal').classList.add('active');
+  }
+
+  function closeModal(event) {
+    document.getElementById('certModal').classList.remove('active');
+  }
+</script>
 
 </body>
 </html>
