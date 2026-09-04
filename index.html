@@ -163,12 +163,16 @@
     }
 
     .btn{
-      display:inline-block;
-      padding:12px 24px;
-      font-size:0.92rem;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:10px 20px;
+      font-size:0.88rem;
       text-decoration:none;
       border:1.5px solid var(--ink);
-      transition:background 0.2s ease, color 0.2s ease;
+      font-weight:500;
+      transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      cursor:pointer;
     }
 
     .btn-solid{
@@ -179,6 +183,13 @@
 
     .btn-solid:hover{ background:var(--oxblood-deep); border-color:var(--oxblood-deep); }
     .btn-outline:hover{ background:var(--ink); color:var(--paper); }
+
+    .btn-small {
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-family: 'IBM Plex Mono', monospace;
+      margin-top: 12px;
+    }
 
     /* Section shell */
     section{
@@ -347,16 +358,24 @@
     .project p{
       color:var(--ink-soft);
       font-size:0.95rem;
-      margin:0;
+      margin:0 0 12px;
     }
 
     /* Education */
     .edu-item{
-      padding:18px 0;
+      padding:20px 0;
       border-top:1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
     }
 
     .edu-item:first-child{ border-top:none; }
+
+    .edu-info {
+      flex: 1;
+    }
 
     .edu-item .edu-degree{
       font-family:'Fraunces', serif;
@@ -375,6 +394,10 @@
       color:var(--oxblood);
       margin-top:4px;
       display:inline-block;
+    }
+
+    .edu-action {
+      margin-top: 4px;
     }
 
     /* Contact */
@@ -428,6 +451,10 @@
       .timeline-item{
         grid-template-columns:1fr;
         gap:6px;
+      }
+      .edu-item {
+        flex-direction: column;
+        gap: 8px;
       }
       nav.masthead-nav{ gap:16px; font-size:0.85rem; }
       .hero{ padding:20px 0 48px; }
@@ -587,7 +614,13 @@
         <span class="project-meta">PUBLIKASI OPINI HUKUM — RETIZEN REPUBLIKA</span>
         <h3>"Masih Anggap Hukum Cuma Urusan Pengacara? Ternyata Sedekat Klik di Medsosmu!"</h3>
       </div>
-      <p>Artikel literasi hukum populer yang mengulas bagaimana aktivitas digital harian seperti transaksi e-commerce dan penggunaan media sosial saling bersinggungan dengan instrumen hukum.</p>
+      <div>
+        <p>Artikel literasi hukum populer yang mengulas bagaimana aktivitas digital harian seperti transaksi e-commerce dan penggunaan media sosial saling bersinggungan dengan instrumen hukum.</p>
+        <!-- Tombol mengarahkan ke postingan Retizen Republika -->
+        <a href="https://retizen.republika.co.id" target="_blank" rel="noopener" class="btn btn-outline btn-small">
+          <span>↗ Baca Artikel di Retizen</span>
+        </a>
+      </div>
     </div>
 
     <div class="project">
@@ -595,7 +628,9 @@
         <span class="project-meta">FINAL PROJECT — HACKTIV8 X IBM SKILLSBUILD (SCORE: 87.70)</span>
         <h3>AI Agent for Legal Implementation</h3>
       </div>
-      <p>Proyek pengembangan dan penerapan agen kecerdasan buatan (*AI Agent*) yang dirancang khusus untuk mempermudah analisis dan pemrosesan riset dokumen hukum.</p>
+      <div>
+        <p>Proyek pengembangan dan penerapan agen kecerdasan buatan (*AI Agent*) yang dirancang khusus untuk mempermudah analisis dan pemrosesan riset dokumen hukum.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -607,28 +642,55 @@
     </div>
 
     <div class="edu-item">
-      <div class="edu-degree">S1 Ilmu Hukum (S.H.)</div>
-      <div class="edu-school">Universitas Islam Negeri (UIN) Syarif Hidayatullah Jakarta — IPK 3.92</div>
-      <span class="edu-year">2025 — 2028 (Ekspektasi)</span>
+      <div class="edu-info">
+        <div class="edu-degree">S1 Ilmu Hukum (S.H.)</div>
+        <div class="edu-school">Universitas Islam Negeri (UIN) Syarif Hidayatullah Jakarta — IPK 3.92</div>
+        <span class="edu-year">2025 — 2028 (Ekspektasi)</span>
+      </div>
     </div>
 
     <div class="edu-item">
-      <div class="edu-degree">Certified Professional Legal Drafter (CPLD)</div>
-      <div class="edu-school">PT Bostan Royal Nusantara (Credential ID: 166/CERT.COMP/BSTN/CPLD/VII/2026)</div>
-      <span class="edu-year">Juli 2026</span>
+      <div class="edu-info">
+        <div class="edu-degree">Certified Professional Legal Drafter (CPLD)</div>
+        <div class="edu-school">PT Bostan Royal Nusantara (Credential ID: 166/CERT.COMP/BSTN/CPLD/VII/2026)</div>
+        <span class="edu-year">Juli 2026</span>
+      </div>
+      <div class="edu-action">
+        <!-- Gantilah URL 'https://linkedin.com' di bawah ini dengan link drive/sertifikat CPLD kamu -->
+        <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener" class="btn btn-outline btn-small">
+          <span>📄 Lihat Sertifikat</span>
+        </a>
+      </div>
     </div>
 
     <div class="edu-item">
-      <div class="edu-degree">Legal - AI Agent for Legal & AI Literacy</div>
-      <div class="edu-school">Hacktiv8 Indonesia x IBM SkillsBuild</div>
-      <span class="edu-year">Juli 2026</span>
+      <div class="edu-info">
+        <div class="edu-degree">Legal - AI Agent for Legal & AI Literacy</div>
+        <div class="edu-school">Hacktiv8 Indonesia x IBM SkillsBuild</div>
+        <span class="edu-year">Juli 2026</span>
+      </div>
+      <div class="edu-action">
+        <!-- Gantilah URL 'https://linkedin.com' di bawah ini dengan link sertifikat IBM/Hacktiv8 kamu -->
+        <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener" class="btn btn-outline btn-small">
+          <span>📄 Lihat Sertifikat</span>
+        </a>
+      </div>
     </div>
 
     <div class="edu-item">
-      <div class="edu-degree">Machine Learning Crash Course: Fairness</div>
-      <div class="edu-school">Google for Developers</div>
-      <span class="edu-year">Sertifikasi Teknis</span>
+      <div class="edu-info">
+        <div class="edu-degree">Machine Learning Crash Course: Fairness</div>
+        <div class="edu-school">Google for Developers</div>
+        <span class="edu-year">Sertifikasi Teknis</span>
+      </div>
+      <div class="edu-action">
+        <!-- Gantilah URL 'https://linkedin.com' di bawah ini dengan link sertifikat Google kamu -->
+        <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener" class="btn btn-outline btn-small">
+          <span>📄 Lihat Sertifikat</span>
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
 
