@@ -398,6 +398,17 @@
       margin:0 0 12px;
     }
 
+    .project-img-preview {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      margin-top: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: block;
+    }
+
     /* Education */
     .edu-item{
       padding:20px 0;
@@ -704,6 +715,8 @@
       <div>
         <span class="project-meta">FINAL PROJECT — HACKTIV8 X IBM SKILLSBUILD (SCORE: 87.70)</span>
         <h3>AI Agent for Corporate Legal Risk Assessment</h3>
+        <!-- FOTO PROYEK DARI REPO KAMU -->
+        <img src="ai-agent-workflow.png" alt="AI Agent Workflow Preview" class="project-img-preview">
       </div>
       <div>
         <p>Pengembangan <em>Automated Legal Workflow Pipeline</em> berbasis Large Language Model (Gemini) untuk mengekstraksi, mem-parser data terstruktur, dan menganalisis tingkat risiko hukum (<em>Risk Rating: Low/Medium/High</em>) pada klausul perjanjian vendor serta memberikan alternatif klausul yang lebih aman bagi klien.</p>
@@ -736,9 +749,9 @@
         <span class="edu-year">17 – 18 Juli 2026</span>
       </div>
       <div class="edu-action">
-        <!-- Tombol Pemicu Pop-up Sertifikat -->
+        <!-- TOMBOL POPUP SERTIFIKAT CPLD -->
         <button class="btn btn-outline btn-small" onclick="openModal()">
-          📄 Buka Sertifikat Full
+          📄 Lihat Sertifikat
         </button>
       </div>
     </div>
@@ -789,11 +802,11 @@
 
 </div>
 
-<!-- STRUCT POPUP MODAL -->
+<!-- STRUCT POPUP MODAL SERTIFIKAT CPLD -->
 <div id="certModal" class="modal-overlay" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">✕</button>
-    <img src="CPLD SERTIF.jpg" alt="Sertifikat CPLD Muhammad Naufal Rahim">
+    <img src="sertifikat-cpld.jpg" alt="Sertifikat CPLD Muhammad Naufal Rahim">
   </div>
 </div>
 
