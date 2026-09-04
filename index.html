@@ -23,13 +23,31 @@
 
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
+    
+    /* Background Luar dengan Nuansa Batik Ornamen Tradisional */
     body{
       margin:0;
-      background:var(--paper);
+      background-color: #2D231E;
+      background-image: 
+        radial-gradient(rgba(154, 123, 52, 0.25) 1px, transparent 1px),
+        radial-gradient(rgba(154, 123, 52, 0.25) 1px, #2D231E 1px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
       color:var(--ink);
       font-family:'IBM Plex Sans', sans-serif;
       line-height:1.6;
       -webkit-font-smoothing:antialiased;
+    }
+
+    /* Pembungkus Utama di Tengah (Background Kertas Portofolio) */
+    .page-container {
+      max-width: 980px;
+      margin: 0 auto;
+      background-color: var(--paper);
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
+      border-left: 2px solid var(--brass);
+      border-right: 2px solid var(--brass);
+      min-height: 100vh;
     }
 
     h1,h2,h3{
@@ -442,10 +460,13 @@
       .about-grid, .skills-columns, .project{ grid-template-columns:1fr; }
       .timeline-item{ grid-template-columns:1fr; gap:6px; }
       .edu-item { flex-direction: column; gap: 8px; }
+      .page-container { border-left: none; border-right: none; }
     }
   </style>
 </head>
 <body>
+
+<div class="page-container">
 
 <header class="masthead">
   <div class="wrap masthead-inner">
@@ -693,6 +714,8 @@
 <footer>
   <div class="wrap">Muhammad Naufal Rahim, CPLD — Jakarta, Indonesia</div>
 </footer>
+
+</div>
 
 </body>
 </html>
