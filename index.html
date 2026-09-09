@@ -244,7 +244,7 @@
     .section-head{
       display:flex;
       align-items:baseline;
-      justify-space:between;
+      justify-content:space-between;
       margin-bottom:36px;
       gap:16px;
     }
@@ -446,7 +446,7 @@
       display:inline-block;
     }
 
-    /* Modal Popup Sertifikat PDF Dynamic */
+    /* Modal Popup Dynamic (Gambar & PDF) */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -472,24 +472,35 @@
       border-radius: 8px;
       max-width: 850px;
       width: 100%;
-      height: 85vh;
+      max-height: 85vh;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       border: 2px solid var(--brass);
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
-    .pdf-viewer {
+    .modal-viewer {
       width: 100%;
-      height: 100%;
+      height: 80vh;
       border: none;
       border-radius: 4px;
+      display: none;
+    }
+
+    .modal-img-viewer {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 4px;
+      display: none;
     }
 
     .modal-close {
       position: absolute;
-      top: -15px;
-      right: -15px;
+      top: 10px;
+      right: 10px;
       background: var(--oxblood);
       color: white;
       border: none;
@@ -552,7 +563,8 @@
       .edu-item { flex-direction: column; gap: 8px; }
       .page-container { border-left: none; border-right: none; }
       header.masthead::before, header.masthead::after { width: 50px; opacity: 0.5; }
-      .modal-content { height: 70vh; }
+      .modal-content { max-height: 70vh; }
+      .modal-viewer { height: 65vh; }
     }
   </style>
 </head>
@@ -737,7 +749,7 @@
         </div>
         <div>
           <p>Pengembangan <em>Automated Legal Workflow Pipeline</em> berbasis Large Language Model (Gemini) untuk mengekstraksi, mem-parser data terstruktur, dan menganalisis tingkat risiko hukum (<em>Risk Rating: Low/Medium/High</em>) pada klausul perjanjian vendor serta memberikan alternatif klausul yang lebih aman bagi klien.</p>
-          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf')">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf', 'pdf')">
             📄 Lihat Sertifikat Project
           </button>
         </div>
@@ -766,7 +778,7 @@
           <span class="edu-year">17 – 18 Juli 2026</span>
         </div>
         <div class="edu-action">
-          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat CPLD Muhammad Naufal.pdf')">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat CPLD Muhammad Naufal.pdf', 'pdf')">
             📄 Lihat Sertifikat
           </button>
         </div>
@@ -779,7 +791,7 @@
           <span class="edu-year">Juli 2026</span>
         </div>
         <div class="edu-action">
-          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf')">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf', 'pdf')">
             📄 Lihat Sertifikat
           </button>
         </div>
@@ -792,9 +804,9 @@
           <span class="edu-year">Sertifikasi Teknis</span>
         </div>
         <div class="edu-action">
-          <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener" class="btn btn-outline btn-small">
-            <span>📄 Lihat Sertifikat</span>
-          </a>
+          <button class="btn btn-outline btn-small" onclick="openModal('google mlc.png', 'image')">
+            📄 Lihat Sertifikat
+          </button>
         </div>
       </div>
 
@@ -818,24 +830,40 @@
 
 </div>
 
-<!-- STRUCT POPUP MODAL SERTIFIKAT DYNAMIC PDF -->
+<!-- STRUCT POPUP MODAL DYNAMIC (PDF & IMAGE) -->
 <div id="certModal" class="modal-overlay" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">✕</button>
-    <iframe id="pdfFrame" src="" class="pdf-viewer" title="Sertifikat Viewer"></iframe>
+    <iframe id="pdfFrame" src="" class="modal-viewer" title="Sertifikat Viewer"></iframe>
+    <img id="imgFrame" src="" class="modal-img-viewer" alt="Sertifikat Google ML">
   </div>
 </div>
 
 <!-- JAVASCRIPT LOGIC POPUP DYNAMIC -->
 <script>
-  function openModal(pdfPath) {
-    document.getElementById('pdfFrame').src = pdfPath;
+  function openModal(filePath, fileType) {
+    const pdfFrame = document.getElementById('pdfFrame');
+    const imgFrame = document.getElementById('imgFrame');
+    
+    if (fileType === 'image') {
+      pdfFrame.style.display = 'none';
+      pdfFrame.src = '';
+      imgFrame.src = filePath;
+      imgFrame.style.display = 'block';
+    } else {
+      imgFrame.style.display = 'none';
+      imgFrame.src = '';
+      pdfFrame.src = filePath;
+      pdfFrame.style.display = 'block';
+    }
+    
     document.getElementById('certModal').classList.add('active');
   }
 
   function closeModal(event) {
     document.getElementById('certModal').classList.remove('active');
     document.getElementById('pdfFrame').src = '';
+    document.getElementById('imgFrame').src = '';
   }
 </script>
 
