@@ -219,6 +219,8 @@
       font-size:1.15rem;
       color:var(--ink-soft);
       max-width:58ch;
+      text-align: justify;
+      hyphens: auto;
     }
 
     .hero .role strong{
@@ -300,6 +302,8 @@
       max-width:62ch;
       color:var(--ink-soft);
       font-size:1.02rem;
+      text-align: justify;
+      hyphens: auto;
     }
 
     .about-body p + p{ margin-top:16px; }
@@ -358,6 +362,8 @@
       color:var(--ink-soft);
       font-size:0.96rem;
       max-width:58ch;
+      text-align: justify;
+      hyphens: auto;
     }
 
     .timeline-desc ul{
@@ -428,6 +434,8 @@
       color:var(--ink-soft);
       font-size:0.95rem;
       margin:0 0 12px;
+      text-align: justify;
+      hyphens: auto;
     }
 
     .project-img-preview {
@@ -521,7 +529,7 @@
     }
 
     .contact h2{ color:var(--paper); }
-    .contact p{ color:#C9C2B4; max-width:52ch; font-size:1.02rem; }
+    .contact p{ color:#C9C2B4; max-width:52ch; font-size:1.02rem; text-align: justify; hyphens: auto; }
 
     .contact-links{
       margin-top:28px;
@@ -844,7 +852,7 @@
 </div>
 
 <script>
-  // Function Switch Bahasa (Aman tanpa merusak teks tombol)
+  // Function Switch Bahasa
   function switchLang(lang) {
     const elements = document.querySelectorAll('[data-id][data-en]');
     elements.forEach(el => {
@@ -859,7 +867,7 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   }
 
-  // Function Modal Popup (Otomatis encode URL spasi/karakter khusus)
+  // Function Modal Popup
   function openModal(filePath, fileType) {
     const pdfFrame = document.getElementById('pdfFrame');
     const imgFrame = document.getElementById('imgFrame');
