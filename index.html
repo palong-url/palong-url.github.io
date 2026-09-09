@@ -244,7 +244,7 @@
     .section-head{
       display:flex;
       align-items:baseline;
-      justify-space:between;
+      justify-content:space-between;
       margin-bottom:36px;
       gap:16px;
     }
@@ -446,7 +446,7 @@
       display:inline-block;
     }
 
-    /* Modal Popup Sertifikat */
+    /* Modal Popup Sertifikat PDF */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -470,17 +470,20 @@
       background: var(--paper);
       padding: 16px;
       border-radius: 8px;
-      max-width: 800px;
+      max-width: 850px;
       width: 100%;
+      height: 85vh;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       border: 2px solid var(--brass);
+      display: flex;
+      flex-direction: column;
     }
 
-    .modal-content img {
+    .pdf-viewer {
       width: 100%;
-      height: auto;
+      height: 100%;
+      border: none;
       border-radius: 4px;
-      display: block;
     }
 
     .modal-close {
@@ -498,6 +501,7 @@
       font-size: 16px;
       line-height: 1;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 1001;
     }
 
     /* Contact */
@@ -548,6 +552,7 @@
       .edu-item { flex-direction: column; gap: 8px; }
       .page-container { border-left: none; border-right: none; }
       header.masthead::before, header.masthead::after { width: 50px; opacity: 0.5; }
+      .modal-content { height: 70vh; }
     }
   </style>
 </head>
@@ -580,7 +585,6 @@
       <h1>Menghubungkan Ketelitian Hukum Korporat dengan Efisiensi Teknologi AI.</h1>
       <p class="role">Mahasiswa Hukum UIN Jakarta (IPK 3.92) & <strong>Certified Professional Legal Drafter (CPLD)</strong> dengan pengalaman praktis dalam <em>due diligence</em>, peninjauan kontrak, riset regulasi, serta pengembangan agen AI untuk sektor hukum.</p>
       
-      <!-- HERO ACTIONS DENGAN TOMBOL DOWNLOAD CV -->
       <div class="hero-actions">
         <a class="btn btn-solid" href="CV_Muhammad_Naufal_Rahim.pdf" download="CV_Muhammad_Naufal_Rahim.pdf">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -814,11 +818,11 @@
 
 </div>
 
-<!-- STRUCT POPUP MODAL SERTIFIKAT CPLD -->
+<!-- STRUCT POPUP MODAL SERTIFIKAT PDF -->
 <div id="certModal" class="modal-overlay" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">✕</button>
-    <img src="sertifikat-cpld.jpg" alt="Sertifikat CPLD Muhammad Naufal Rahim">
+    <iframe src="Sertifikat CPLD Muhammad Naufal.pdf" class="pdf-viewer" title="Sertifikat CPLD"></iframe>
   </div>
 </div>
 
