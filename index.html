@@ -748,7 +748,7 @@
         </div>
         <div>
           <p><span data-id="Pengembangan Automated Legal Workflow Pipeline berbasis Large Language Model (Gemini) untuk mengekstraksi, mem-parser data terstruktur, dan menganalisis tingkat risiko hukum pada klausul perjanjian vendor serta memberikan rekomendasi klausul yang aman." data-en="Development of an LLM-based Automated Legal Workflow Pipeline (Gemini) to extract, parse structured data, and evaluate legal risk levels on vendor agreements with automated clause recommendations.">Pengembangan Automated Legal Workflow Pipeline berbasis Large Language Model (Gemini) untuk mengekstraksi, mem-parser data terstruktur, dan menganalisis tingkat risiko hukum pada klausul perjanjian vendor serta memberikan rekomendasi klausul yang aman.</span></p>
-          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat_IBM.pdf', 'pdf')">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf', 'pdf')">
             <span data-id="📄 Lihat Sertifikat Project" data-en="📄 View Project Certificate">📄 Lihat Sertifikat Project</span>
           </button>
         </div>
@@ -777,7 +777,7 @@
           <span class="edu-year">17 – 18 July 2026</span>
         </div>
         <div class="edu-action">
-          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat_CPLD_Muhammad_Naufal.pdf', 'pdf')">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat CPLD Muhammad Naufal.pdf', 'pdf')">
             <span data-id="📄 Lihat Sertifikat" data-en="📄 View Certificate">📄 Lihat Sertifikat</span>
           </button>
         </div>
@@ -790,7 +790,7 @@
           <span class="edu-year">July 2026</span>
         </div>
         <div class="edu-action">
-          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat_IBM.pdf', 'pdf')">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf', 'pdf')">
             <span data-id="📄 Lihat Sertifikat" data-en="📄 View Certificate">📄 Lihat Sertifikat</span>
           </button>
         </div>
@@ -844,7 +844,7 @@
 </div>
 
 <script>
-  // Function Switch Bahasa (Fix aman tanpa merusak onclick)
+  // Function Switch Bahasa (Aman tanpa merusak teks tombol)
   function switchLang(lang) {
     const elements = document.querySelectorAll('[data-id][data-en]');
     elements.forEach(el => {
@@ -859,7 +859,7 @@
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   }
 
-  // Function Modal Popup
+  // Function Modal Popup (Otomatis encode URL spasi/karakter khusus)
   function openModal(filePath, fileType) {
     const pdfFrame = document.getElementById('pdfFrame');
     const imgFrame = document.getElementById('imgFrame');
