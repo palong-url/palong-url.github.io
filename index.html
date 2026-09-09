@@ -244,7 +244,7 @@
     .section-head{
       display:flex;
       align-items:baseline;
-      justify-content:space-between;
+      justify-space:between;
       margin-bottom:36px;
       gap:16px;
     }
@@ -446,7 +446,7 @@
       display:inline-block;
     }
 
-    /* Modal Popup Sertifikat PDF */
+    /* Modal Popup Sertifikat PDF Dynamic */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -737,9 +737,9 @@
         </div>
         <div>
           <p>Pengembangan <em>Automated Legal Workflow Pipeline</em> berbasis Large Language Model (Gemini) untuk mengekstraksi, mem-parser data terstruktur, dan menganalisis tingkat risiko hukum (<em>Risk Rating: Low/Medium/High</em>) pada klausul perjanjian vendor serta memberikan alternatif klausul yang lebih aman bagi klien.</p>
-          <a href="https://media.licdn.com/dms/image/v2/D562DAQEvSn9-zcLZUQ/profile-treasury-document-images_1280/B56aAfIz9EKkAg-/1/1787228799766?e=1789603200&v=beta&t=wzHcmrl_MEvnsKoFzdDq7rkuJx3BsLQOMYH8SgYSXT8" target="_blank" rel="noopener" class="btn btn-outline btn-small">
-            <span>📄 Lihat Sertifikat Project</span>
-          </a>
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf')">
+            📄 Lihat Sertifikat Project
+          </button>
         </div>
       </div>
     </div>
@@ -766,7 +766,7 @@
           <span class="edu-year">17 – 18 Juli 2026</span>
         </div>
         <div class="edu-action">
-          <button class="btn btn-outline btn-small" onclick="openModal()">
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat CPLD Muhammad Naufal.pdf')">
             📄 Lihat Sertifikat
           </button>
         </div>
@@ -779,9 +779,9 @@
           <span class="edu-year">Juli 2026</span>
         </div>
         <div class="edu-action">
-          <a href="https://media.licdn.com/dms/image/v2/D562DAQEvSn9-zcLZUQ/profile-treasury-document-images_1280/B56aAfIz9EKkAg-/1/1787228799766?e=1789603200&v=beta&t=wzHcmrl_MEvnsKoFzdDq7rkuJx3BsLQOMYH8SgYSXT8" target="_blank" rel="noopener" class="btn btn-outline btn-small">
-            <span>📄 Lihat Sertifikat</span>
-          </a>
+          <button class="btn btn-outline btn-small" onclick="openModal('Sertifikat IBM.pdf')">
+            📄 Lihat Sertifikat
+          </button>
         </div>
       </div>
 
@@ -818,22 +818,24 @@
 
 </div>
 
-<!-- STRUCT POPUP MODAL SERTIFIKAT PDF -->
+<!-- STRUCT POPUP MODAL SERTIFIKAT DYNAMIC PDF -->
 <div id="certModal" class="modal-overlay" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">✕</button>
-    <iframe src="Sertifikat CPLD Muhammad Naufal.pdf" class="pdf-viewer" title="Sertifikat CPLD"></iframe>
+    <iframe id="pdfFrame" src="" class="pdf-viewer" title="Sertifikat Viewer"></iframe>
   </div>
 </div>
 
-<!-- JAVASCRIPT LOGIC POPUP -->
+<!-- JAVASCRIPT LOGIC POPUP DYNAMIC -->
 <script>
-  function openModal() {
+  function openModal(pdfPath) {
+    document.getElementById('pdfFrame').src = pdfPath;
     document.getElementById('certModal').classList.add('active');
   }
 
   function closeModal(event) {
     document.getElementById('certModal').classList.remove('active');
+    document.getElementById('pdfFrame').src = '';
   }
 </script>
 
