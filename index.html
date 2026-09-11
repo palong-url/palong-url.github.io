@@ -309,23 +309,29 @@
     .about-body p + p{ margin-top:16px; }
 
     .fact-list{
-      border-left:2px solid var(--brass);
-      padding-left:20px;
+      background-color:var(--oxblood-deep);
+      border:1px solid var(--brass);
+      border-radius:6px;
+      padding:28px 26px;
       margin:0;
     }
 
     .fact-list dt{
       font-family:'IBM Plex Mono', monospace;
       font-size:0.72rem;
-      color:var(--ink-soft);
+      color:#C9A24B;
       text-transform:uppercase;
-      letter-spacing:0.06em;
+      letter-spacing:0.08em;
     }
 
     .fact-list dd{
-      margin:2px 0 16px;
-      font-size:0.98rem;
+      margin:4px 0 20px;
+      font-size:1.02rem;
+      color:var(--paper);
+      font-weight:600;
     }
+
+    .fact-list dd:last-child{ margin-bottom:0; }
 
     /* Experience */
     .timeline-item{
