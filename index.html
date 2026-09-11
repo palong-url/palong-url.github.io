@@ -102,7 +102,7 @@
 
     .masthead-inner{
       display:flex;
-      justify-space:between;
+      justify-content:space-between;
       align-items:center;
       flex-wrap:wrap;
       gap:12px;
@@ -276,7 +276,7 @@
     .section-head{
       display:flex;
       align-items:baseline;
-      justify-space:between;
+      justify-content:space-between;
       margin-bottom:36px;
       gap:16px;
     }
@@ -448,6 +448,33 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       display: block;
     }
+
+    /* Highlight box khusus proyek somasi/hukum */
+    .project-highlights {
+      background-color: var(--paper-deep);
+      border-left: 3px solid var(--brass);
+      padding: 10px 14px;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 14px;
+    }
+
+    .highlights-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--oxblood);
+      margin-bottom: 6px;
+    }
+
+    .highlights-list {
+      list-style-type: disc;
+      padding-left: 16px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    .highlights-list li { margin-bottom: 3px; }
 
     /* Education */
     .edu-item{
@@ -734,6 +761,34 @@
         <span class="section-tag">LITERACY & INNOVATION</span>
       </div>
 
+      <!-- PROYEK 1: SURAT SOMASI -->
+      <div class="project">
+        <div>
+          <span class="project-meta">DISPUTE RESOLUTION — LEGAL NOTICE</span>
+          <h3><span data-id="Penyusunan Surat Somasi: Sengketa Wanprestasi Pengadaan Buku" data-en="Drafting Legal Notice: Breach of Contract in Book Procurement">Penyusunan Surat Somasi: Sengketa Wanprestasi Pengadaan Buku</span></h3>
+          <img src="SURAT_SOMASI.png" alt="Preview Surat Somasi" class="project-img-preview">
+        </div>
+        <div>
+          <p>
+            <span data-id="Menyusun Surat Somasi teguran hukum resmi atas dugaan cidera janji (wanprestasi) penyedia jasa pencetakan/pengadaan buku. Penyusunan berfokus pada analisis ketaatan asas kepatutan, pembuktian pelunasan kewajiban pembayaran, serta penetapan opsi tuntutan hukum yang tegas." data-en="Drafted an official legal notice regarding breach of contract by a book printing/procurement service provider. Focused on good faith principles, proof of full payment, and firm legal remedies.">Menyusun Surat Somasi teguran hukum resmi atas dugaan cidera janji (wanprestasi) penyedia jasa pencetakan/pengadaan buku. Penyusunan berfokus pada analisis ketaatan asas kepatutan, pembuktian pelunasan kewajiban pembayaran, serta penetapan opsi tuntutan hukum yang tegas.</span>
+          </p>
+
+          <div class="project-highlights">
+            <div class="highlights-title"><span data-id="Poin Penilaian Hukum:" data-en="Legal Analysis Points:">Poin Penilaian Hukum:</span></div>
+            <ul class="highlights-list">
+              <li><strong>Analisis Kontrak & Pembayaran:</strong> Menelaah klausul sanksi & bukti pelunasan biaya secara sah.</li>
+              <li><strong>Uji Asas Kepatutan (Pasal 1338 & 1339 KUH Perdata):</strong> Keterlambatan penyerahan melebihi batas patut.</li>
+              <li><strong>Konsekuensi Hukum:</strong> Skema Wanprestasi (Pasal 1243 KUH Perdata) & Potensi Pidana Penipuan (Pasal 378/372 KUHP).</li>
+            </ul>
+          </div>
+
+          <button class="btn btn-outline btn-small" onclick="openModal('SURAT_SOMASI.pdf', 'pdf')">
+            <span data-id="📄 Lihat Sample Somasi (Redacted)" data-en="📄 View Sample Notice (Redacted)">📄 Lihat Sample Somasi (Redacted)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PROYEK 2: OPINI RETIZEN -->
       <div class="project">
         <div>
           <span class="project-meta"><span data-id="PUBLIKASI OPINI HUKUM — RETIZEN REPUBLIKA" data-en="LEGAL OPINION PUBLICATION — RETIZEN REPUBLIKA">PUBLIKASI OPINI HUKUM — RETIZEN REPUBLIKA</span></span>
@@ -748,6 +803,7 @@
         </div>
       </div>
 
+      <!-- PROYEK 3: AI AGENT HACKTIV8 -->
       <div class="project">
         <div>
           <span class="project-meta">FINAL PROJECT — HACKTIV8 X IBM SKILLSBUILD (SCORE: 87.70)</span>
@@ -761,6 +817,7 @@
           </button>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -822,82 +879,99 @@
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2><span data-id="Mari Berdiskusi" data-en="Let's Connect">Mari Berdiskusi</span></h2>
-      <p><span data-id="Terbuka untuk peluang internship/peran dalam bidang Legal Corporate, Legal Drafting, Compliance, maupun posisi berbasis Legal Tech. Silakan hubungi saya melalui kontak di bawah ini." data-en="Open for internship or career opportunities in Corporate Legal, Legal Drafting, Compliance, or Legal Tech roles. Feel free to contact me directly.">Terbuka untuk peluang internship/peran dalam bidang Legal Corporate, Legal Drafting, Compliance, maupun posisi berbasis Legal Tech. Silakan hubungi saya melalui kontak di bawah ini.</span></p>
+      <div class="section-head">
+        <h2><span data-id="Mari Berdiskusi & Berkolaborasi" data-en="Let's Connect & Collaborate">Mari Berdiskusi & Berkolaborasi</span></h2>
+      </div>
+      <p><span data-id="Terbuka untuk peluang kerja sama profesional di bidang Legal Compliance, Corporate Legal Drafting, Legal Due Diligence, serta proyek Legal-AI Integration." data-en="Open for professional opportunities in Legal Compliance, Corporate Legal Drafting, Legal Due Diligence, and Legal-AI Integration projects.">Terbuka untuk peluang kerja sama profesional di bidang Legal Compliance, Corporate Legal Drafting, Legal Due Diligence, serta proyek Legal-AI Integration.</span></p>
+      
       <div class="contact-links">
-        <a href="mailto:naufalrahim007@gmail.com">naufalrahim007@gmail.com</a>
-        <a href="https://linkedin.com/in/muhammadnaufalrahim" target="_blank" rel="noopener"><span data-id="LinkedIn Profil" data-en="LinkedIn Profile">LinkedIn Profil</span></a>
+        <a href="mailto:naufalrahim11@gmail.com">
+          <span data-id="✉️ Kirim Email" data-en="✉️ Send Email">✉️ Kirim Email</span>
+        </a>
+        <a href="https://linkedin.com/in/mnaufalrahim" target="_blank" rel="noopener">
+          <span data-id="🔗 LinkedIn Profil" data-en="🔗 LinkedIn Profile">🔗 LinkedIn Profil</span>
+        </a>
+        <a href="https://github.com/palong-url" target="_blank" rel="noopener">
+          <span data-id="💻 GitHub Repository" data-en="💻 GitHub Repository">💻 GitHub Repository</span>
+        </a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="wrap">Muhammad Naufal Rahim, CPLD — Jakarta, Indonesia</div>
+    <div class="wrap">
+      <p>© 2026 Muhammad Naufal Rahim, CPLD. All rights reserved.</p>
+    </div>
   </footer>
 
 </div>
 
-<!-- STRUCT POPUP MODAL DYNAMIC -->
-<div id="certModal" class="modal-overlay" onclick="closeModal(event)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal(event)">✕</button>
-    <iframe id="pdfFrame" src="" class="modal-viewer" title="Sertifikat Viewer"></iframe>
-    <img id="imgFrame" src="" class="modal-img-viewer" alt="Sertifikat">
-    <div id="pdfFallback" style="display:none; text-align:center; padding: 12px 0 0;">
-      <a id="pdfDirectLink" href="" target="_blank" rel="noopener" class="btn btn-solid btn-small" style="text-decoration:none;">
-        <span data-id="↗ Buka PDF / Download" data-en="↗ Open PDF / Download">↗ Buka PDF / Download</span>
-      </a>
-    </div>
+<!-- Dynamic Modal Popup Container -->
+<div id="modalOverlay" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <iframe id="modalPdfViewer" class="modal-viewer" src=""></iframe>
+    <img id="modalImageViewer" class="modal-img-viewer" src="" alt="Document Preview">
   </div>
 </div>
 
 <script>
-  // Function Switch Bahasa
+  // Language Switcher Handler
   function switchLang(lang) {
+    const btnId = document.getElementById('btn-id');
+    const btnEn = document.getElementById('btn-en');
     const elements = document.querySelectorAll('[data-id][data-en]');
-    elements.forEach(el => {
-      if (lang === 'en') {
-        el.textContent = el.getAttribute('data-en');
-      } else {
+
+    if (lang === 'id') {
+      btnId.classList.add('active');
+      btnEn.classList.remove('active');
+      elements.forEach(el => {
         el.textContent = el.getAttribute('data-id');
-      }
-    });
-
-    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  }
-
-  // Function Modal Popup
-  function openModal(filePath, fileType) {
-    const pdfFrame = document.getElementById('pdfFrame');
-    const imgFrame = document.getElementById('imgFrame');
-    const pdfFallback = document.getElementById('pdfFallback');
-    const pdfDirectLink = document.getElementById('pdfDirectLink');
-    const safePath = encodeURI(filePath);
-
-    if (fileType === 'image') {
-      pdfFrame.style.display = 'none';
-      pdfFrame.src = '';
-      pdfFallback.style.display = 'none';
-      imgFrame.src = safePath;
-      imgFrame.style.display = 'block';
+      });
     } else {
-      imgFrame.style.display = 'none';
-      imgFrame.src = '';
-      pdfFrame.src = safePath;
-      pdfFrame.style.display = 'block';
-      pdfDirectLink.href = safePath;
-      pdfFallback.style.display = 'block';
+      btnEn.classList.add('active');
+      btnId.classList.remove('active');
+      elements.forEach(el => {
+        el.textContent = el.getAttribute('data-en');
+      });
     }
-    
-    document.getElementById('certModal').classList.add('active');
   }
 
-  function closeModal(event) {
-    document.getElementById('certModal').classList.remove('active');
-    document.getElementById('pdfFrame').src = '';
-    document.getElementById('imgFrame').src = '';
-    document.getElementById('pdfFallback').style.display = 'none';
+  // Modal Viewer Handler
+  function openModal(fileSrc, type) {
+    const overlay = document.getElementById('modalOverlay');
+    const pdfViewer = document.getElementById('modalPdfViewer');
+    const imgViewer = document.getElementById('modalImageViewer');
+
+    if (type === 'pdf') {
+      pdfViewer.src = fileSrc;
+      pdfViewer.style.display = 'block';
+      imgViewer.style.display = 'none';
+    } else if (type === 'image') {
+      imgViewer.src = fileSrc;
+      imgViewer.style.display = 'block';
+      pdfViewer.style.display = 'none';
+    }
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    const overlay = document.getElementById('modalOverlay');
+    const pdfViewer = document.getElementById('modalPdfViewer');
+    const imgViewer = document.getElementById('modalImageViewer');
+
+    overlay.classList.remove('active');
+    pdfViewer.src = '';
+    imgViewer.src = '';
+    document.body.style.overflow = 'auto';
+  }
+
+  function closeModalOnOverlay(e) {
+    if (e.target.id === 'modalOverlay') {
+      closeModal();
+    }
   }
 </script>
 
