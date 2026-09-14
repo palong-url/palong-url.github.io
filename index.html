@@ -162,6 +162,24 @@
       color: var(--paper);
     }
 
+    /* Admin Button in Nav */
+    .btn-admin-nav {
+      background: var(--paper-deep);
+      border: 1px solid var(--brass);
+      color: var(--oxblood-deep);
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .btn-admin-nav:hover {
+      background: var(--oxblood);
+      color: var(--paper);
+    }
+
     /* Banner & Hero */
     .hero-banner-wrap {
       width: 100%;
@@ -518,7 +536,7 @@
     .modal-content {
       position: relative;
       background: var(--paper);
-      padding: 16px;
+      padding: 24px;
       border-radius: 8px;
       max-width: 850px;
       width: 100%;
@@ -551,6 +569,52 @@
       line-height: 1;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       z-index: 1001;
+    }
+
+    /* Admin Password Box Style */
+    .admin-modal-box {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .admin-modal-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--oxblood-deep);
+    }
+    .admin-modal-box p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 20px;
+    }
+    .admin-input {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 1rem;
+      border: 1.5px solid var(--brass);
+      border-radius: 4px;
+      background: var(--paper-deep);
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .admin-input:focus {
+      border-color: var(--oxblood);
+    }
+    .admin-stat-display {
+      margin-top: 15px;
+      padding: 16px;
+      background: var(--oxblood-deep);
+      color: var(--paper);
+      border-radius: 6px;
+      border: 1px solid var(--brass);
+    }
+    .admin-stat-num {
+      font-size: 2.2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: bold;
+      color: #C9A24B;
     }
 
     /* Contact */
@@ -617,6 +681,9 @@
           <button class="lang-btn active" onclick="switchLang('id')" id="btn-id">ID</button>
           <button class="lang-btn" onclick="switchLang('en')" id="btn-en">EN</button>
         </div>
+
+        <!-- Tombol Admin Stats -->
+        <button class="btn-admin-nav" onclick="openAdminModal()">🔒 Admin</button>
       </nav>
     </div>
   </header>
@@ -646,7 +713,7 @@
           <span data-id="Download CV (PDF)" data-en="Download Resume (PDF)">Download CV (PDF)</span>
         </a>
         <a class="btn btn-outline" href="#contact"><span data-id="Hubungi Saya" data-en="Get in Touch">Hubungi Saya</span></a>
-        <a class="btn btn-outline" href="#projects"><span data-id="Lihat Publikasi & Project" data-en="View Publications & Projects">Lihat Publikasi & Project</span></a>
+        <a class="btn btn-outline" href="#projects"><span data-id="Lihat Publikasi & Project" data-en="View Publications & Projects">Lihat Publikasi & Projects</span></a>
       </div>
 
     </div>
@@ -711,7 +778,7 @@
         <div>
           <div class="timeline-role"><span data-id="Panitia Event — AMPUH Career Day Vol. 3" data-en="Event Committee — AMPUH Career Day Vol. 3">Panitia Event — AMPUH Career Day Vol. 3</span></div>
           <div class="timeline-org">Angkatan Muda Peduli Hukum (AMPUH)</div>
-          <p class="timeline-desc"><span data-id="Mengonsepkan dan mengoperasikan rangkaian acara seminar pengembangan karier hukum secara terstruktur dan profesional." data-en="Conceptualized and coordinated legal career development seminars in a structured and professional manner.">Mengonsepkan dan mengoperasikan rangkaian acara seminar pengembangan karier hukum secara terstruktur dan profesional.</span></p>
+          <p class="timeline-desc"><span data-id="Mengonsepkan dan mengoperasikan rangkaian acara seminar pengembangan karier hukum secara terstructured dan profesional." data-en="Conceptualized and coordinated legal career development seminars in a structured and professional manner.">Mengonsepkan dan mengoperasikan rangkaian acara seminar pengembangan karier hukum secara terstruktur dan profesional.</span></p>
         </div>
       </div>
 
@@ -938,17 +1005,124 @@
 
 </div>
 
-<!-- Dynamic Modal Popup Container -->
+<!-- Dynamic Modal Popup Container (Untuk Dokumen & Admin Stats) -->
 <div id="modalOverlay" class="modal-overlay" onclick="closeModalOnOverlay(event)">
-  <div class="modal-content">
+  <div class="modal-content" id="modalContentBox">
     <button class="modal-close" onclick="closeModal()">×</button>
+    
+    <!-- Viewer Dokumen PDF & Gambar -->
     <iframe id="modalPdfViewer" class="modal-viewer" src=""></iframe>
     <img id="modalImageViewer" class="modal-img-viewer" src="" alt="Document Preview">
+
+    <!-- Box Admin Stats -->
+    <div id="adminModalBox" class="admin-modal-box" style="display: none;">
+      <h3>Admin Dashboard</h3>
+      <div id="adminAuthSection">
+        <p>Masukkan password admin untuk melihat jumlah statistik pengunjung website:</p>
+        <input type="password" id="adminPasswordInput" class="admin-input" placeholder="Masukkan Password Admin" onkeyup="checkAdminEnter(event)">
+        <br>
+        <button class="btn btn-solid" onclick="verifyAdminPassword()">Login Admin</button>
+      </div>
+
+      <div id="adminStatSection" style="display: none;">
+        <div class="admin-stat-display">
+          <p style="margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Total Pengunjung Website</p>
+          <div class="admin-stat-num" id="visitorCountDisplay">...</div>
+          <p style="margin: 0; font-size: 0.75rem; color: #C9C2B4;">(Tercatat secara realtime)</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <script>
-  // Language Switcher Handler
+  // ==================== VISITOR COUNTER API ====================
+  // Menggunakan API hit gratis untuk pencatatan kunjungan otomatis
+  const API_KEY_NAMESPACE = "palong-url.github.io";
+  const API_KEY_NAME = "portfolio_views";
+  let cachedVisitorCount = null;
+
+  // Fungsi merekam & menambah total pengunjung saat halaman dimuat
+  function recordVisitor() {
+    fetch(`https://api.counterapi.dev/v1/${API_KEY_NAMESPACE}/${API_KEY_NAME}/up`)
+      .then(res => res.json())
+      .then(data => {
+        if(data && data.count !== undefined) {
+          cachedVisitorCount = data.count;
+        }
+      })
+      .catch(err => {
+        // Fallback jika API utama bermasalah
+        fetch(`https://api.codetabs.com/v1/counter?key=${API_KEY_NAMESPACE}_visits`)
+          .then(res => res.json())
+          .then(data => {
+            if(data && data.count !== undefined) cachedVisitorCount = data.count;
+          })
+          .catch(e => console.log('Visitor count log:', e));
+      });
+  }
+
+  // Jalankan pencatatan saat halaman terbuka
+  recordVisitor();
+
+
+  // ==================== ADMIN PASSWORD SYSTEM ====================
+  // Ubah password admin di bawah ini jika ingin menggantinya
+  const ADMIN_PASSWORD = "NOPAL";
+
+  function openAdminModal() {
+    const overlay = document.getElementById('modalOverlay');
+    const pdfViewer = document.getElementById('modalPdfViewer');
+    const imgViewer = document.getElementById('modalImageViewer');
+    const adminBox = document.getElementById('adminModalBox');
+    
+    // Sembunyikan viewer dokumen & tampilkan box admin
+    pdfViewer.style.display = 'none';
+    imgViewer.style.display = 'none';
+    adminBox.style.display = 'block';
+
+    // Reset Form Input Admin
+    document.getElementById('adminAuthSection').style.display = 'block';
+    document.getElementById('adminStatSection').style.display = 'none';
+    document.getElementById('adminPasswordInput').value = '';
+
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function checkAdminEnter(event) {
+    if (event.key === "Enter") {
+      verifyAdminPassword();
+    }
+  }
+
+  function verifyAdminPassword() {
+    const inputPass = document.getElementById('adminPasswordInput').value;
+    if (inputPass === ADMIN_PASSWORD) {
+      document.getElementById('adminAuthSection').style.display = 'none';
+      document.getElementById('adminStatSection').style.display = 'block';
+
+      if (cachedVisitorCount !== null) {
+        document.getElementById('visitorCountDisplay').textContent = cachedVisitorCount.toLocaleString('id-ID') + " Orang";
+      } else {
+        // Ambil data terbaru jika belum ter-cache
+        fetch(`https://api.counterapi.dev/v1/${API_KEY_NAMESPACE}/${API_KEY_NAME}`)
+          .then(res => res.json())
+          .then(data => {
+            document.getElementById('visitorCountDisplay').textContent = (data.count || 0).toLocaleString('id-ID') + " Orang";
+          })
+          .catch(() => {
+            document.getElementById('visitorCountDisplay').textContent = "Gagal memuat data";
+          });
+      }
+    } else {
+      alert("Password Admin Salah!");
+    }
+  }
+
+
+  // ==================== LANGUAGE SWITCHER ====================
   function switchLang(lang) {
     const btnId = document.getElementById('btn-id');
     const btnEn = document.getElementById('btn-en');
@@ -969,11 +1143,15 @@
     }
   }
 
-  // Modal Viewer Handler
+
+  // ==================== MODAL VIEWER ====================
   function openModal(fileSrc, type) {
     const overlay = document.getElementById('modalOverlay');
     const pdfViewer = document.getElementById('modalPdfViewer');
     const imgViewer = document.getElementById('modalImageViewer');
+    const adminBox = document.getElementById('adminModalBox');
+
+    adminBox.style.display = 'none';
 
     if (type === 'pdf') {
       pdfViewer.src = fileSrc;
@@ -993,10 +1171,12 @@
     const overlay = document.getElementById('modalOverlay');
     const pdfViewer = document.getElementById('modalPdfViewer');
     const imgViewer = document.getElementById('modalImageViewer');
+    const adminBox = document.getElementById('adminModalBox');
 
     overlay.classList.remove('active');
     pdfViewer.src = '';
     imgViewer.src = '';
+    adminBox.style.display = 'none';
     document.body.style.overflow = 'auto';
   }
 
