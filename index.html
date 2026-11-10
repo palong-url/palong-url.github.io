@@ -467,6 +467,20 @@
 
     .highlights-list li { margin-bottom: 3px; }
 
+    /* Writing */
+    .writing-item{
+      display:block;
+      text-decoration:none;
+      padding:20px 0;
+      border-top:1px solid var(--line);
+    }
+    .writing-item:first-of-type{ border-top:none; padding-top:0; }
+    .writing-meta{ display:block; font-size:0.82rem; color:var(--oxblood); margin-bottom:4px; }
+    .writing-title{ display:block; font-family:'Fraunces', serif; font-size:1.2rem; line-height:1.35; }
+    .writing-desc{ display:block; color:var(--ink-soft); font-size:0.95rem; margin-top:6px; max-width:62ch; }
+    .writing-link{ display:block; font-size:0.85rem; margin-top:8px; color:var(--ink-soft); }
+    .writing-item:hover .writing-title{ color:var(--oxblood); }
+
     /* Education */
     .edu-item{
       padding:20px 0;
@@ -596,6 +610,7 @@
       <div class="masthead-name">Muhammad Naufal Rahim</div>
       <nav class="masthead-nav">
         <a href="#projects"><span data-id="Contoh Kerja" data-en="Work Samples">Contoh Kerja</span></a>
+        <a href="#writing"><span data-id="Tulisan" data-en="Writing">Tulisan</span></a>
         <a href="#experience"><span data-id="Pengalaman" data-en="Experience">Pengalaman</span></a>
         <a href="#education"><span data-id="Pendidikan" data-en="Education">Pendidikan</span></a>
         <a href="#contact"><span data-id="Kontak" data-en="Contact">Kontak</span></a>
@@ -674,18 +689,6 @@
 
       <div class="project">
         <div>
-          <span class="project-meta"><span data-id="Tulisan · Retizen Republika" data-en="Writing · Retizen Republika">Tulisan · Retizen Republika</span></span>
-          <h3>“Masih Anggap Hukum Cuma Urusan Pengacara? Ternyata Sedekat Klik di Medsosmu!”</h3>
-          <img src="retizen-article.png" alt="Tangkapan layar artikel di Retizen" class="project-img-preview">
-        </div>
-        <div>
-          <p><span data-id="Tulisan ringan untuk pembaca umum: belanja online, pesan di grup chat, dan unggahan di media sosial ternyata sudah bersinggungan dengan hukum, meski jarang kita sadari." data-en="A short piece for general readers (in Indonesian): online shopping, group chats, and social media posts already have legal consequences, even if we rarely notice.">Tulisan ringan untuk pembaca umum: belanja online, pesan di grup chat, dan unggahan di media sosial ternyata sudah bersinggungan dengan hukum, meski jarang kita sadari.</span></p>
-          <a href="https://retizen.republika.co.id/posts/734468/masih-anggap-hukum-cuma-urusan-pengacara-ternyata-sedekat-klik-di-medsosmu-" target="_blank" rel="noopener" class="btn btn-outline btn-small"><span data-id="Baca di Retizen ↗" data-en="Read on Retizen ↗">Baca di Retizen ↗</span></a>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
           <span class="project-meta"><span data-id="Proyek akhir kursus · Hacktiv8 × IBM SkillsBuild" data-en="Course final project · Hacktiv8 × IBM SkillsBuild">Proyek akhir kursus · Hacktiv8 × IBM SkillsBuild</span></span>
           <h3><span data-id="Menilai risiko klausul perjanjian vendor dengan Gemini" data-en="Rating risk in vendor agreement clauses with Gemini">Menilai risiko klausul perjanjian vendor dengan Gemini</span></h3>
           <img src="ai-agent-workflow.png" alt="Diagram alur kerja proyek" class="project-img-preview">
@@ -696,6 +699,27 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span data-id="Tulisan" data-en="Writing">Tulisan</span></h2>
+      </div>
+
+      <a class="writing-item" href="https://kumparan.com/naufal-rahim/28EKCXAf6UV" target="_blank" rel="noopener">
+        <span class="writing-meta"><span data-id="kumparan · 25 September 2026" data-en="kumparan · 25 September 2026 (in Indonesian)">kumparan · 25 September 2026</span></span>
+        <span class="writing-title">Dialektika atau Lingkaran Setan? Paradoks Logika dalam Diskusi Publik</span>
+        <span class="writing-link"><span data-id="Baca di kumparan ↗" data-en="Read on kumparan ↗">Baca di kumparan ↗</span></span>
+      </a>
+
+      <a class="writing-item" href="https://retizen.republika.co.id/posts/734468/masih-anggap-hukum-cuma-urusan-pengacara-ternyata-sedekat-klik-di-medsosmu-" target="_blank" rel="noopener">
+        <span class="writing-meta"><span data-id="Retizen Republika" data-en="Retizen Republika (in Indonesian)">Retizen Republika</span></span>
+        <span class="writing-title">Masih Anggap Hukum Cuma Urusan Pengacara? Ternyata Sedekat Klik di Medsosmu!</span>
+        <span class="writing-desc"><span data-id="Belanja online, pesan di grup chat, dan unggahan di media sosial ternyata sudah bersinggungan dengan hukum, meski jarang kita sadari." data-en="Online shopping, group chats, and social media posts already have legal consequences, even if we rarely notice.">Belanja online, pesan di grup chat, dan unggahan di media sosial ternyata sudah bersinggungan dengan hukum, meski jarang kita sadari.</span></span>
+        <span class="writing-link"><span data-id="Baca di Retizen ↗" data-en="Read on Retizen ↗">Baca di Retizen ↗</span></span>
+      </a>
     </div>
   </section>
 
