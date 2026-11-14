@@ -193,7 +193,13 @@
     .modal{display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center; padding:20px;}
     .modal.active{display:flex;}
     .modal-box{position:relative; background:var(--card); border-radius:20px; padding:20px; width:100%; max-width:880px; max-height:90vh; display:flex; justify-content:center;}
-    .modal iframe{width:100%; height:78vh; border:0; border-radius:12px; display:none; background:#fff;}
+    .modal-box{flex-direction:column; align-items:center; gap:12px;}
+    .pdf-view{width:100%; height:78vh; overflow:auto; -webkit-overflow-scrolling:touch; display:none; border-radius:12px; background:#3a3b3f; padding:10px;}
+    .pdf-view canvas{display:block; width:100%; height:auto; margin:0 auto 10px; background:#fff; border-radius:4px;}
+    .pdf-view canvas:last-child{margin-bottom:0;}
+    .pdf-status{color:#ddd; text-align:center; padding:40px 12px; font-size:0.9rem;}
+    .pdf-status a{color:var(--accent); text-decoration:underline;}
+    .pdf-newtab{display:none; font-size:0.82rem; color:var(--muted); text-decoration:underline;}
     .modal img{max-width:100%; max-height:78vh; object-fit:contain; border-radius:12px; display:none;}
     .modal-close{position:absolute; top:-14px; right:-14px; width:38px; height:38px; border-radius:50%; border:0; background:var(--accent); color:#fff; font-size:20px; cursor:pointer;}
 
@@ -485,7 +491,8 @@
 <div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()" aria-label="Tutup">×</button>
-    <iframe id="modalPdf" src=""></iframe>
+    <div id="modalPdf" class="pdf-view"></div>
+    <a id="modalPdfLink" class="pdf-newtab" href="#" target="_blank" rel="noopener"><span data-id="Buka PDF di tab baru" data-en="Open PDF in new tab">Buka PDF di tab baru</span></a>
     <img id="modalImg" src="" alt="Pratinjau dokumen">
   </div>
 </div>
@@ -499,18 +506,63 @@
       el.textContent = el.getAttribute(lang === 'id' ? 'data-id' : 'data-en');
     });
   }
+  // PDF dirender dengan PDF.js agar tampil di semua perangkat (browser HP tidak bisa menampilkan PDF di dalam iframe)
+  const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+  let pdfjsReady = null, pdfJob = 0;
+  function loadPdfJs() {
+    if (!pdfjsReady) {
+      pdfjsReady = new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = PDFJS + 'pdf.min.js';
+        s.onload = () => { window.pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS + 'pdf.worker.min.js'; resolve(window.pdfjsLib); };
+        s.onerror = () => { pdfjsReady = null; reject(new Error('pdf.js gagal dimuat')); };
+        document.head.appendChild(s);
+      });
+    }
+    return pdfjsReady;
+  }
+  async function renderPdf(url, box) {
+    const job = ++pdfJob;
+    const isEn = document.documentElement.lang === 'en';
+    box.innerHTML = '<div class="pdf-status">' + (isEn ? 'Loading document…' : 'Memuat dokumen…') + '</div>';
+    try {
+      const pdfjsLib = await loadPdfJs();
+      const doc = await pdfjsLib.getDocument({ url }).promise;
+      if (job !== pdfJob) return;
+      box.innerHTML = '';
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const width = box.clientWidth - 20;
+      for (let i = 1; i <= doc.numPages; i++) {
+        const page = await doc.getPage(i);
+        if (job !== pdfJob) return;
+        const base = page.getViewport({ scale: 1 });
+        const vp = page.getViewport({ scale: (width / base.width) * ratio });
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.floor(vp.width); canvas.height = Math.floor(vp.height);
+        box.appendChild(canvas);
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+      }
+    } catch (e) {
+      if (job !== pdfJob) return;
+      box.innerHTML = '<div class="pdf-status">' + (isEn ? 'Preview unavailable. ' : 'Pratinjau tidak tersedia. ') +
+        '<a href="' + url + '" target="_blank" rel="noopener">' + (isEn ? 'Open the PDF' : 'Buka PDF-nya') + '</a></div>';
+    }
+  }
   function openModal(src, type) {
-    const pdf = document.getElementById('modalPdf'), img = document.getElementById('modalImg');
+    const pdf = document.getElementById('modalPdf'), img = document.getElementById('modalImg'), link = document.getElementById('modalPdfLink');
     const isPdf = type === 'pdf';
     pdf.style.display = isPdf ? 'block' : 'none';
+    link.style.display = isPdf ? 'inline' : 'none';
     img.style.display = isPdf ? 'none' : 'block';
-    (isPdf ? pdf : img).src = src;
     document.getElementById('modal').classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (isPdf) { const url = encodeURI(src); link.href = url; renderPdf(url, pdf); }
+    else img.src = src;
   }
   function closeModal() {
+    pdfJob++;
     document.getElementById('modal').classList.remove('active');
-    document.getElementById('modalPdf').src = '';
+    document.getElementById('modalPdf').innerHTML = '';
     document.getElementById('modalImg').src = '';
     document.body.style.overflow = '';
   }
