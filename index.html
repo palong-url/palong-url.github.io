@@ -20,7 +20,7 @@
       --radius:32px;
     }
     *{box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
+    html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%;}
     body{
       margin:0;
       background:var(--bg);
@@ -233,6 +233,21 @@
       .eps{grid-template-columns:1fr;}
       .contact{padding:44px 24px;}
       section{padding:80px 6px 0;}
+    }
+    @media (max-width: 600px){
+      .hello{font-size:1.05rem;}
+      .hero h1{font-size:2.5rem;}
+      .hero-aside strong{font-size:1.1rem;}
+      .hero-aside p, .services div{font-size:0.84rem;}
+      .strip-items span{font-size:0.92rem;}
+      .eyebrow{font-size:0.88rem; margin-bottom:10px;}
+      .section-top h2{font-size:1.65rem;}
+      .section-top .lead{font-size:1rem;}
+      .card h3, .row h3{font-size:1.08rem;}
+      .card p, .row .desc, .row ul{font-size:0.86rem;}
+      .contact h2{font-size:2rem;}
+      .contact p{font-size:0.95rem;}
+      section{padding:60px 6px 0;}
     }
     @media (max-width: 480px){
       .pill.small .label{display:none;}
